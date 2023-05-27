@@ -1,8 +1,12 @@
-const dateInput = parseInt(
-  prompt("Введіть дату (день, місяць, рік) у форматі ДД.ММ.РРР")
+const dateInput = prompt(
+  "Введіть дату (день, місяць, рік) у форматі ДД.ММ.РРР:"
 );
 
-const [day, month, year] = dateInput.split(".").map(Number);
+const parsedDate = parseInt(dateInput.replace(/\./g, ""), 10);
+
+const [day, month, year] = dateInput
+  .split(".")
+  .map((part) => parseInt(part, 10));
 
 let daysInMonth;
 
